@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <!--head-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Youform.com </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <!---body-->
+    <body id="main">
+        <div>
+        <h1>Html Layout Designer</h1>
+        <ul id="ul">
+          <style>
+            <!---css part-->
+body{
+    background-color: rgb(45, 42, 46);
+    color: white;
+    overflow-y: scroll;
+}
+#createForm{
+    text-align: center;
+    margin: auto;
+    display: grid;
+    visibility: hidden;
+}
+h1{
+    text-align: center;
+    background-color: blueviolet;
+    width :"40px"
+
+}
+#caption{
+    text-align: center;
+}
+#preview{
+    background-color: white;
+}
+#ul{
+    list-style-type: none;
+    display: flex;
+    overflow: auto;
+}
+ li{
+    padding-left: 30px;
+    padding-right:30px;
+    background-color: gray;
+   
+}  
+li:hover{
+    background-color: black;
+    color:azure;
+    border-radius: 30px;
+    cursor: pointer;
+    
+}
+ 
+button{
+     background-color: gray;
+     font-weight: bold;
+     border-radius: 30px;
+     border: 4px solid aqua;
+}
+
+  
+
+          </style>
+          <!--list of buttons for layout-->
+           <button onclick="insertButton()"><li>button</li></button>
+           <button onclick="insertTextbox()"><li>text box</li> </button>
+           <button onclick = "insertCheckBox()"><li>check box</li> </button>
+           <button onclick="insertRadioButton()"><li>radio button</li> </button>
+           <button onclick="newRadio()"><li>newRadioGroup</li></button>
+           <button onclick="insertInputForUsers()"><li>inputBar</li></button>
+           <button onclick="insertimage()"><li>image</li></button>
+           <button onclick="fileInput()"><li>file input</li></button>       
+           <button onclick="numberInput()"><li>number input</li></button>
+          <button onclick="imageButton()"><li>Image button</li></button>
+          <button onclick ="optionMenu()"><li>option menu</li></button>
+          <button onclick="insertList()"><li>list</li></button>
+        </ul>
+        <!--next line button-->
+        <button onclick="nextLine()">go to next line</button>
+    </div>
+    <!--javascript-->
+         <script >var insertButton = () =>{
+      var button = document.createElement('button');
+      button.innerHTML="button"
+      document.body.appendChild(button);
+    }
+    var insertTextbox = ()=>{
+         var textBox = document.createElement('textarea');
+         document.body.appendChild(textBox);
+        }
+    var insertCheckBox =()=>{
+      var checkBox = document.createElement('input')
+      checkBox.type="checkbox";
+      checkBox.value = "value";
+      checkBox.name="name";
+      document.body.appendChild(checkBox)
+    }
+    var a=0
+    var insertRadioButton = ()=>{
+      var radioButton = document.createElement("input")
+      radioButton.type = "radio"
+      radioButton.name = "name"+a
+      document.body.appendChild(radioButton)
+      
+    }
+    var insertInputForUsers= () =>{
+      var input = document.createElement("input")
+      console.log(input.type)
+      document.body.appendChild(input)
+    }
+    var nextLine = () =>{
+     var newLine = document.createElement('br');
+      document.body.appendChild(newLine)
+    }
+
+    var insertimageButton =() =>{
+      var imageButton = document.createElement('input')
+      imageButton.type = "image"
+      imageButton.src = prompt("enter image location in double qoutes")
+      imageButton.value = "click me"
+      document.body.appendChild(imageButton)
+
+        
+    }
+    var insertimage = () =>{
+      var image = document.createElement("img")
+      var source  = prompt("enter image location in double qoutes")
+      image.src = source 
+      document.body.appendChild(image)   
+    }
+    var fileInput = () =>{
+      var file = document.createElement('input')
+      file.type="file"
+      document.body.appendChild(file)   
+    }
+    
+    var numberInput = () =>{
+      var number = document.createElement('input')
+      number.type= "number"
+      document.body.appendChild(number)
+    }
+    var newRadio = () =>{
+      a++
+
+    }
+    var imageButton=()=>{
+      var imgButton = document.createElement('input')
+      var src =prompt("enter image source in double quotes")
+      imgButton.type="image"
+      imgButton.src = src
+      document.body.appendChild(imgButton)
+    }
+    var optionMenu= ()=>{
+      var option = document.createElement('select')
+      option.innerHTML="select"
+      option1 = document.createElement('option')
+      option1.innerHTML="option1"
+      option2 = document.createElement('option')
+      option2.innerHTML="option2"
+      option3 = document.createElement('option')
+      option3.innerHTML="option3"
+      option.appendChild(option1)
+      option.appendChild(option2)
+      option.appendChild(option3)
+      document.body.appendChild(option)
+      
+    }
+    var insertList = ()=>{
+      var list= document.createElement('ul');
+      var item1 = document.createElement('li')
+      var item2 = document.createElement('li')
+      var item3 = document.createElement('li')
+      var item4 = document.createElement('li')
+      item1.innerHTML="item1"
+      item2.innerHTML="item2"
+      item3.innerHTML="item3"
+      item4.innerHTML="item4"
+      list.appendChild(item1)
+      list.appendChild(item2)
+      list.appendChild(item3)
+      list.appendChild(item4)
+      document.body.appendChild(list)
+    }
+    
+    
+    
+   
+    
+    
+</script>
+    </body>
+</html>
+<!--End-->
